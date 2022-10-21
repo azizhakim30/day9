@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="../public/css/navbar.css" />
+    <link rel="stylesheet" href="../public/css/detailproject.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
+      crossorigin="anonymous"
+    />
+    <title>Detail Project</title>
+  </head>
+  <body>
+    <!-- Start Navbar -->
+    <nav class="navbar navbar-expand-lg bg-light">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="/">
+          <img src="../public/image/logo.png" width="30" height="24" />
+        </a>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a
+                class="nav-link active"
+                aria-current="page"
+                href="/"
+                style="font-weight: bold; font-size: 18px"
+                >Home</a
+              >
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link active"
+                aria-current="page"
+                href="/formProject"
+                style="font-size: 18px"
+                >Add Project</a
+              >
+            </li>
+          </ul>
+          <button class="btn btn-dark" type="button" style="font-size: 15px">
+            <a href="/contact" style="text-decoration: none; color: white"
+              >Contact Me</a
+            >
+          </button>
+        </div>
+      </div>
+    </nav>
+    <!-- End Navbar -->
+
+    <!-- Start Page-->
+    <div class="container">
+      <h1>{{.Details.Name}}</h1>
+      <div class="pageTop">
+        <div class="image">
+          <img src="../public/image/webApp.jpg" />
+        </div>
+        <div class="detail">
+          <p class="title">Duration</p>
+          <div class="duration">
+            <div>
+              <i class="fa-solid fa-calendar-days"></i>
+              <p>{{ .Details.StartDate}} - {{ .Details.EndDate }}</p>
+            </div>
+            <div>
+              <i class="fa-solid fa-clock"></i>
+              <p>{{ .Details.Duration}}</p>
+            </div>
+          </div>
+
+          <div class="tech">
+            <p class="title">Technologies</p>
+            <div class="icons">
+              <div class="iconLeft">
+                <div>
+                  <i class="fa-brands fa-html5"></i>
+                  <p>HTML</p>
+                </div>
+                <div>
+                  <i class="fa-brands fa-css3-alt"></i>
+                  <p>CSS</p>
+                </div>
+              </div>
+              <div class="iconRight">
+                <div>
+                  <i class="fa-brands fa-node-js"></i>
+                  <p>nodeJs</p>
+                </div>
+                <div>
+                  <i class="fa-brands fa-react"></i>
+                  <p>reactJs</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <p>{{.Details.Desc}}</p>
+      </div>
+    </div>
+    <!-- End Page -->
+  </body>
+</html>

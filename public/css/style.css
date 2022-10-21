@@ -1,0 +1,23 @@
+nav {
+  height: 10vh;
+}
+
+.container-fluid {
+  height: 90vh;
+}
+
+.container-form {
+  width: 500px;
+}
+
+.bg-grey {
+  background-color: #b8bbbb;
+}
+
+#reactJs {
+  margin-left: 15px;
+}
+
+#vueJs {
+  margin-left: 1px;
+}

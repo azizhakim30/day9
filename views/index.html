@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Home</title>
+    <link rel="stylesheet" href="/public/css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+      integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <!--Start Navbar-->
+    <nav class="navbar navbar-expand-lg bg-light">
+      <div class="container">
+        <a class="navbar-brand" href="#">
+          <img src="/public/image/logo.png" alt="logo" width="50px" />
+        </a>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" href="/" style="font-weight: bold"
+                >Home</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/formProject" style="color: black"
+                >Add Project</a
+              >
+            </li>
+          </ul>
+          <a href="/contact">
+            <button class="btn btn-dark text-white" type="submit">
+              Contact Me
+            </button>
+          </a>
+        </div>
+      </div>
+    </nav>
+    <!-- End Navbar -->
+
+    <!--Start Card-->
+    <div
+      class="container-fluid d-flex justify-content-center align-items-center bg-grey"
+    >
+      <div class="card p-3 shadow-lg rounded-4" style="width: 1000px">
+        <div class="row g-0">
+          <div class="col-md-8 d-flex align-items-center">
+            <div class="card-body">
+              <h5 class="card-title fw-bold mb-4">Hi Welcome to my hut</h5>
+              <p class="card-text mb-3">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Corporis suscipit modi assumenda possimus quos, debitis neque
+                quibusdam quasi provident nisi labore ab laudantium sunt
+                repudiandae accusantium, reiciendis eum unde exercitationem
+                eveniet consectetur delectus error itaque iusto. Voluptatem,
+                quam itaque debitis atque, earum eveniet necessitatibus,
+                corrupti ullam sequi ipsum molestiae asperiores.
+              </p>
+              <a href="/contact" class="btn btn-dark px-3">Contact</a>
+              <a
+                href="../public/CV.pdf"
+                download
+                style="text-decoration: none; color: black"
+              >
+                Donwload CV <i class="fa-solid fa-download"></i
+              ></a>
+              <div class="mt-5" id="icons">
+                <a href="https://www.linkedin.com/"
+                  ><i
+                    class="fa-brands fa-linkedin fa-3x ms-3"
+                    alt="linkedin"
+                    style="color: black"
+                  ></i
+                ></a>
+                <a href="https://www.instagram.com/"
+                  ><i
+                    class="fa-brands fa-square-instagram fa-3x ms-3"
+                    alt="instagram"
+                    style="color: black"
+                  ></i
+                ></a>
+                <a href="https://www.facebook.com/"
+                  ><i
+                    class="fa-brands fa-square-facebook fa-3x ms-3"
+                    alt="facebook"
+                    style="color: black"
+                  ></i
+                ></a>
+                <a href="https://www.twitter.com/"
+                  ><i
+                    class="fa-brands fa-square-twitter fa-3x ms-3"
+                    alt="twitter"
+                    style="color: black"
+                  ></i
+                ></a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 pe-2">
+            <div class="card shadow rounded-3" style="width: 18rem">
+              <img
+                src="/public/image/Foto.jpg"
+                class="card-img-top rounded-top-3"
+              />
+              <div class="card-body mx-auto lh-1">
+                <h4>Azizul Hakim</h4>
+                <p class="card-text d-flex justify-content-center">
+                  FullStack Javascript
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--cardProject-->
+    <div class="container-fluid">
+      <h3 class="d-flex justify-content-center mt-3">MY PROJECT</h3>
+      <div class="d-flex flex-wrap justify-content-center">
+        {{ range $index, $data := .Projects }}
+        <a
+          href="/detailProject/{{$data.Id}}"
+          target="_blank"
+          class="text-decoration-none text-black"
+        >
+          <div class="card m-3 shadow-lg rounded-4" style="width: 20rem">
+            <img
+              src="../public/image/webApp.jpg"
+              class="card-img-top rounded-4 p-2"
+            />
+            <div class="card-body">
+              <h4 class="card-title" style="margin-bottom: -5px">
+                {{ $data.Name }}
+              </h4>
+              <small class="text-secondary" style="font-size: 12px"
+                >Duration : {{ $data.Duration }}</small
+              >
+              <p class="card-text">{{$data.Desc}}</p>
+              <div class="mt-2 mb-2">
+                {{range $index, $item := $data.Tech}} {{if eq $item "node-js"}}
+                <i class="fa-brands fa-xl fa-node-js"></i>
+                {{else if eq $item "react"}}
+                <i class="fa-brands fa-xl fa-react"></i>
+                {{else if eq $item "square-js"}}
+                <i class="fa-brands fa-xl fa-square-js"></i>
+                {{else if eq $item "vuejs"}}
+                <i class="fa-brands fa-xl fa-vuejs"></i>
+                {{ end }} {{ end }}
+              </div>
+              <div class="d-flex btn-group">
+                <a
+                  href="/formEditProject/{{$data.Id}}"
+                  class="btn btn-dark m-2 rounded"
+                  >Edit</a
+                >
+                <a
+                  href="/deleteProject/{{$data.Id}}"
+                  class="btn btn-dark m-2 rounded-start"
+                  >Delete</a
+                >
+              </div>
+            </div>
+          </div>
+        </a>
+        {{ end }}
+      </div>
+    </div>
+  </body>
+</html>

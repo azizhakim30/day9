@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Contact</title>
+    <link rel="stylesheet" href="/public/css/style.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <!--Start Navbar-->
+    <nav class="navbar navbar-expand-lg bg-light">
+      <div class="container">
+        <a class="navbar-brand" href="#">
+          <img src="/public/image/logo.png" alt="logo" width="50px" />
+        </a>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" href="/" style="font-weight: bold"
+                >Home</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/formProject" style="color: black"
+                >Add Project</a
+              >
+            </li>
+          </ul>
+          <a href="/contact">
+            <button class="btn btn-dark text-white" type="submit">
+              Contact Me
+            </button>
+          </a>
+        </div>
+      </div>
+    </nav>
+    <!-- End Navbar -->
+
+    <!--Start Form-->
+    <div
+      class="container-fluid d-flex justify-content-center align-items-center bg-grey"
+    >
+      <div class="container-form">
+        <h2 class="mb-3 text-center">GET IN TOUCH</h2>
+        <form action="">
+          <div class="mb-3">
+            <label for="inputName" class="form-label fw-bold">Name</label>
+            <input type="text" id="inputName" class="form-control shadow" />
+          </div>
+          <div class="mb-3">
+            <label for="inputEmail" class="form-label fw-bold">Email</label>
+            <input type="text" id="inputEmail" class="form-control shadow" />
+          </div>
+          <div class="mb-3">
+            <label for="inputPhone" class="form-label fw-bold"
+              >Phone Number</label
+            >
+            <input type="text" id="inputPhone" class="form-control shadow" />
+          </div>
+          <div class="mb-3">
+            <label for="inputSubject" class="form-label fw-bold">Subject</label>
+            <select id="inputSubject" class="form-select shadow">
+              <option selected hidden></option>
+              <option value="Frontend">Frontend</option>
+              <option value="Backend">Backend</option>
+              <option value="Fullstack">Fullstack</option>
+            </select>
+          </div>
+          <div class="mb-3">
+            <label for="inputMessage" class="form-label fw-bold"
+              >Your Message</label
+            >
+            <textarea
+              id="inputMessage"
+              class="form-control shadow"
+              style="resize: none"
+              rows="10"
+              cols="30"
+            ></textarea>
+          </div>
+          <div class="d-grid d-md-flex justify-content-md-end">
+            <button onclick="submitContact()" class="btn btn-dark">
+              Submit
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <!-- End Form -->
+    <script src="../public/js/script.js"></script>
+  </body>
+</html>
